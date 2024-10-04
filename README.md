@@ -3,6 +3,8 @@
 This project utilizes a Triplet Network, implemented using PyTorch, to generate feature embeddings, which are then classified using an AdaBoost classifier. The model is applied to the FIMMG dataset to predict the onset of Type 2 Diabetes (T2D), evaluating three distinct cases based on different subsets of features. The goal is to assess the model's ability to predict diabetes using varying levels of information from Electronic Health Records (EHR).
 
 ## Dataset
+**To obtain the FIMMG dataset in Excel format, request the VRAI research team at the following link:** https://vrai.dii.univpm.it/content/fimmg-dataset
+
 The project works with the FIMMG dataset, which contains medical and demographic data. We evaluate the model under three different cases, each focusing on a specific subset of features.
 
 ### Cases:
@@ -17,8 +19,6 @@ The project works with the FIMMG dataset, which contains medical and demographic
    - **Objective:** To evaluate the model's performance in predicting T2D while controlling for age as a variable.
   
 ## How it works
-**To obtain the FIMMG dataset in Excel format, request the VRAI research team at the following link:** https://vrai.dii.univpm.it/content/fimmg-dataset
-
 1. **Triplet Network Training:** The Triplet Network learns to generate meaningful embeddings by minimizing the distance between similar samples (positive pairs) and maximizing the distance between dissimilar samples (negative pairs) using triplet loss.
 2. **Embedding Generation:** After training, the model generates embeddings for the dataset, which represent the feature space in a more compact and discriminative form.
 3. **AdaBoost Classification:** The generated embeddings are used to train an AdaBoost classifier to predict whether a subject has Type 2 Diabetes. The model is evaluated using cross-validation on several metrics.
